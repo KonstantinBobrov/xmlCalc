@@ -1,4 +1,4 @@
-package SAX;
+package ru.pharus.SAX;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.function.BiFunction;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 public class OperationSaxHandler extends DefaultHandler {
@@ -17,7 +16,7 @@ public class OperationSaxHandler extends DefaultHandler {
     private ElementName currentElement;
     private Expression expression;
 
-    private enum ElementName {
+    public enum ElementName {
         SIMPLECALCULATOR, EXPRESSIONS, EXPRESSION, OPERATION, ARG
     }
 
@@ -73,6 +72,10 @@ public class OperationSaxHandler extends DefaultHandler {
         if (currentElement == ElementName.ARG) {
             stack.peek().setArg(new Integer(new String(ch, start, length)));
         }
+    }
+
+    public List<Expression> getExpressions() {
+        return expressions;
     }
 
     private Operation createOperation(Attributes attributes) {

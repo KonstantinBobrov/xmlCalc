@@ -7,10 +7,14 @@ group 'ru.pharus.lern'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
 }
+
+// this turns logging on in tests:
+test.testLogging.showStandardStreams = true
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.3.11'

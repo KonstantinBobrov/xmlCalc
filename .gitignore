@@ -1,1 +1,15 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea
+.gradle
+.git
+build
+out
+*.class
+*.iml
+.idea/compiler.xml
+.idea/libraries/
+.idea/modules.xml
+.idea/modules/
+.idea/vcs.xml
+.idea/xmlCalc.iml
+out/production/classes/ru.pharus.SAX/
